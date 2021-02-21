@@ -1,22 +1,28 @@
-import {homepageUrl, loginPageUrl} from './page-url';
+import {homepageUrl, loginPageUrl} from "./page-url";
+import {loginButton} from "./selectors"
 
-class PageClasses {
-    constructor(homepageUrl) {
-        let homepageUrl = url;
-        let loginButton =
+export class Homepage {
+    constructor(homepageUrl, loginButton) {
+        let homepageUrl = homepageUrl;
+        let loginButton = loginButton;
     }
     async open() {
-        await browser.get(url);
+        await browser.get(homepageUrl);
+    }
+    async clickLoginButton() {
+        await loginButton.click();
     }
 }
 
-class LoginPage {
+export const homepage = new Homepage(homepageUrl, loginButton);
+
+export class LoginPage {
     constructor(loginPageUrl) {
-        let loginPageUrl = url;
+        let loginPageUrl = loginPageUrl;
         let emailInput = element(by.model('form.email'));
         let passwordInput = element(by.model('form.password'));
     }
     async open() {
-        await browser.get(url);
+        await browser.get(loginPageUrl);
     }
 }

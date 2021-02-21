@@ -1,12 +1,9 @@
-describe('Protractor Demo App', function() {
-    it('should add one and two', function() {
-        browser.get('http://juliemr.github.io/protractor-demo/');
-        element(by.model('first')).sendKeys(1);
-        element(by.model('second')).sendKeys(2);
+import {homepageUrl} from "./page-url"
 
-        element(by.id('gobutton')).click();
-
-        expect(element(by.binding('latest')).getText()).
-        toEqual('3');
+describe('My first test', function() {
+    it('should open login page', function() {
+        browser.get(homepageUrl);
+        //homepage.clickLoginButton();
+        expect(greeting.getText()).toEqual('Hello Julie!');
     });
 });
