@@ -1,11 +1,11 @@
 import {browser, element, by} from "protractor";
 import {protractor} from "protractor/built/ptor";
-import {url} from "./url"
+import {homepageUrl} from "./url"
 
 describe('Protractor Demo App', function() {
     it('should have a title', function() {
-        browser.get(url);
+        browser.get(homepageUrl);
 
-        expect(browser.getTitle()).toEqual('Super Calculator');
+        expect(browser.getCurrentUrl()).toEqual('https://www.sbzend.ssls.com/');
     });
 });
