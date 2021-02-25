@@ -4,6 +4,7 @@
   "description": "",
   "main": "conf.js",
   "dependencies": {
+    "@types/jasmine": "^3.6.4",
     "babel-preset-env": "^1.7.0",
     "jasmine": "^3.6.4",
     "protractor": "^7.0.0"
