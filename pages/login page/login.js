@@ -1,27 +1,28 @@
 import {by, element} from "protractor";
 
 export class LoginPage {
-
-    emailInput = element(by.model('form.email'));
-    passInput = element(by.model('form.password'));
-    eyeBtn = element(by.css('.btn-input-block'));
-    loginBtn = element(by.buttonText('Login'));
-    loginPageContent = element(by.css('.authorization-content'));
+    constructor() {
+        this.loginPageContent = element(by.css('.authorization-content'));
+    }
 
     async enterEmail(email) {
-        await this.emailInput.sendKeys(email);
+        const emailInput = element(by.model('form.email'));
+        await emailInput.sendKeys(email);
     }
 
     async enterPass(pass) {
-        await this.passInput.sendKeys(pass);
+        const passInput = element(by.model('form.password'));
+        await passInput.sendKeys(pass);
     }
 
     async showPass() {
-        await this.eyeBtn.click();
+        const eyeBtn = element(by.css('.btn-input-block'));
+        await eyeBtn.click();
     }
 
     async clickLogin() {
-        await this.loginBtn.click();
+        const loginBtn = element(by.buttonText('Login'));
+        await loginBtn.click();
     }
 
 }

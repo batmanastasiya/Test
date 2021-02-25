@@ -1,0 +1,13 @@
+{
+  "presets": [ "latest", "stage-0"],
+  "plugins": [
+    ["@babel/plugin-transform-runtime",
+    {
+      "regenerator": true
+    }
+  ],
+    ["transform-runtime", {
+      "regenerator": true
+    }]
+  ]
+}
