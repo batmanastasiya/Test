@@ -3,23 +3,29 @@ import {browser, by, element} from "protractor";
 
 
 export class Homepage {
-    constructor() {}
-
- //   homepageContent = element(by.id('certs'))
-
-    async clickLoginBtn() {
-        const loginBtn = element(by.xpath('//span[contains(text(),\'Log in\')]'));
-        await loginBtn.click();
-    }
-
-    async clickMyProfileBtn() {
-        const myProfileBtn = element(by.xpath('//header/div[1]/div[1]/div[1]/button[1]'));
-        await myProfileBtn.click();
+    constructor() {
+        this.homepageUrl = 'https://www.sbzend.ssls.com/';
+        this.homepageContent = element(by.id('certs'))
     }
 
     async open() {
-        const homepageUrl = 'https://www.sbzend.ssls.com/';
-        await browser.get(homepageUrl);
+        await browser.get(this.homepageUrl);
+    }
+}
+
+
+export class Header {
+    constructor() {
+        this.loginBtn = element(by.xpath('//span[contains(text(),\'Log in\')]'));
+        this.myProfileBtn = element(by.xpath('//header/div[1]/div[1]/div[1]/button[1]'));
+    }
+
+    async clickLoginBtn() {
+        await this.loginBtn.click();
+    }
+
+    async clickMyProfileBtn() {
+        await this.myProfileBtn.click();
     }
 
 }
