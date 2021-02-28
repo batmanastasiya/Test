@@ -16,8 +16,9 @@ describe('My profile page. Client area', () => {
         await header.clickLoginBtn();
         await loginPage.fullLogin();
         await header.clickProfileTabInDropdown();
-        await profile.getVarName();
-        //await profile.grabValuesFromTheTable();
+        await profile.grabValuesFromTheTable();
+        //там не хватает одного метода для новостей. Как проверить в душе не совокупляю getAttribute?
+
         await header.clickLogOut();
     });
 
@@ -29,7 +30,11 @@ describe('My profile page. Client area', () => {
 
         expect(profile.form.get(0).getText()).toBe(userProfileData.name, 'Cannot compare');
         expect(profile.form.get(1).getText()).toBe(userProfileData.email, 'Cannot compare');
-
+        expect(profile.form.get(2).isPresent()).toBeTruthy();
+        expect(profile.form.get(3).getText()).toBe(userProfileData.phone, 'Cannot compare');
+        expect(profile.form.get(4).getText()).toBe(userProfileData.address, 'Cannot compare');
+        expect(profile.form.get(5).getText()).toBe(userProfileData.pin, 'Cannot compare');
+        //еще один експект по новостям и все
 
     });
 

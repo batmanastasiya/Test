@@ -52,7 +52,17 @@ export class ProfilePage {
         });
 
     }
-    setVarNewslatter() {
+  /*  setVarNewslatter() {
 
+    }
+
+   */
+
+    async grabValuesFromTheTable() {
+        await this.getVarName();
+        await this.getVarEmail();
+        await this.getVarPhone();
+        await this.getVarAddress();
+        await this.getVarSupPin();
     }
 }
