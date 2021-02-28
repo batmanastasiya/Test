@@ -1,4 +1,6 @@
 import {by, element} from "protractor";
+import {Header as header} from "../home page/header";
+import {userEmail, userPass} from "../../creds";
 
 export class LoginPage {
     constructor() {
@@ -8,7 +10,6 @@ export class LoginPage {
         this.eyeBtn = element(by.css('.btn-input-block'));
         this.loginBtn = element(by.buttonText('Login'));
     }
-// у меня не получилось вынести переменные, так что пришлось засунуть в конструктор
 
     async enterEmail(email) {
         await this.emailInput.sendKeys(email);
@@ -26,4 +27,9 @@ export class LoginPage {
         await this.loginBtn.click();
     }
 
+    async fullLogin() {
+        await this.enterEmail(userEmail);
+        await this.enterPass(userPass);
+        await this.clickLogin();
+    }
 }

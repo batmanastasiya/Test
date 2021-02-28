@@ -7,7 +7,7 @@ require("babel-polyfill");
 exports.config = {
     framework: 'jasmine',
     seleniumAddress: 'http://localhost:4444/wd/hub',
-    specs: ['./test/login.spec.js'],
+    specs: ['./test/profile.spec.js'],
 
 }
 onPrepare: () => {
