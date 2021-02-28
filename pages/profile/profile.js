@@ -22,14 +22,15 @@ export class ProfilePage {
         });
 
     }
-    //is not empty ↓ переделать
+ /*   //is not empty ↓ переделать
     async getVarPass() {
-        await this.form.get(2).getText().then((text) => {
+        await this.form.get(2).getText().then((value) => {
             userProfileData.pass = text;
             return userProfileData.pass;
         });
 
     }
+    */
     async getVarPhone() {
         await this.form.get(3).getText().then((text) => {
             userProfileData.phone = text;

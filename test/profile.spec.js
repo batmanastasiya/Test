@@ -28,6 +28,7 @@ describe('My profile page. Client area', () => {
         await header.clickProfileTabInDropdown();
 
         expect(profile.form.get(0).getText()).toBe(userProfileData.name, 'Cannot compare');
+        expect(profile.form.get(1).getText()).toBe(userProfileData.email, 'Cannot compare');
 
 
     });
