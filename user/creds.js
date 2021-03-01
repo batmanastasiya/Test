@@ -6,7 +6,6 @@ export let message = 'Uh oh! Email or password is incorrect'
 
 export let userProfileData = {};
 
-
 /*
 export const userProfileDataFactory = (name, email, pass, phone, address, pin, newslatter) => {
     return {

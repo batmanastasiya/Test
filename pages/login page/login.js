@@ -1,15 +1,14 @@
 import {$, by, element} from "protractor";
-import {userEmail, userPass} from "../../creds";
+import {userEmail, userPass} from "../../user/creds";
 
 export class LoginPage {
     constructor() {
-        this.loginPageContent = element(by.css('.authorization-content'));
+        this.loginPageContent = $('.authorization-content');
         this.emailInput = element(by.model('form.email'));
         this.passInput = element(by.model('form.password'));
-        this.eyeBtn = element(by.css('.btn-input-block'));
-        this.loginBtn = element(by.buttonText('Login'));
+        this.eyeBtn = $('.btn-input-block');
+        this.loginBtn = element(by.buttonText('Login')); //этот селектор может быть совсем не оч
         this.errorMessage = $('.noty_text');
-        //element(by.id('#noty_547712987954176000')).
     }
     async enterEmail(email) {
         await this.emailInput.sendKeys(email);

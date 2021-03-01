@@ -2,7 +2,7 @@ import {Header} from "../pages/home page/header";
 import {Homepage} from "../pages/home page/homepage";
 import {LoginPage} from "../pages/login page/login";
 import {describe} from "selenium-webdriver/testing";
-import {invalidEmail, message, userEmail, userPass} from "../creds";
+import {invalidEmail, message, userEmail, userPass} from "../user/creds";
 
 const header = new Header();
 const homepage = new Homepage();

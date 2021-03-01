@@ -1,4 +1,4 @@
-import {userProfileData} from "../creds";
+import {userProfileData} from "../user/creds";
 import {Header} from "../pages/home page/header";
 import {Homepage} from "../pages/home page/homepage";
 import {LoginPage} from "../pages/login page/login";

@@ -1,5 +1,5 @@
 import {$, by, element} from "protractor";
-import {userProfileData} from "../../creds";
+import {userProfileData} from "../../user/creds";
 
 export class ProfilePage {
     constructor() {
