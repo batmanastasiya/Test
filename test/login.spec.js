@@ -26,7 +26,7 @@ describe('Authorization page (Welcome back!)', () => {
 
         await loginPage.clickLogin();
 
-        expect(header.myProfileBtn.getText()).toBe(userEmailBtn);
+        expect(header.myProfileBtn.getText()).toBe(userEmailBtn, 'Button text was not changed. User is not logged in');
 
     });
 

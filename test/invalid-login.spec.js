@@ -2,7 +2,7 @@ import {Header} from "../pages/home page/header";
 import {Homepage} from "../pages/home page/homepage";
 import {LoginPage} from "../pages/login page/login";
 import {describe} from "selenium-webdriver/testing";
-import {invalidEmail, message, userEmail, userPass} from "../user/creds";
+import {invalidEmail, message, userPass} from "../user/creds";
 
 const header = new Header();
 const homepage = new Homepage();
@@ -26,7 +26,7 @@ describe(' Authorization page. Not registered user', () => {
 
         await loginPage.clickLogin();
 
-        expect(await loginPage.errorMessage.isDisplayed()).toBe(true);
+        expect(await loginPage.errorMessage.isDisplayed()).toBe(true, 'Error message didn\'t appear');
         expect(await loginPage.errorMessage.getText()).toBe(message);
 
     });

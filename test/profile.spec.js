@@ -20,18 +20,18 @@ describe('My profile page. Client area', () => {
         await header.clickLogOut();
     });
 
-    it('Verify login', async () => {
+    it('Verify user account data', async () => {
         await header.clickLoginBtn();
         await loginPage.fullLogin();
         await header.clickProfileTabInDropdown();
 
-        expect(profile.profilePageContent.isDisplayed()).toBe(true);
-        expect(profile.form.get(0).getText()).toBe(userProfileData.name, 'Cannot compare');
-        expect(profile.form.get(1).getText()).toBe(userProfileData.email, 'Cannot compare');
+        expect(profile.profilePageContent.isDisplayed()).toBe(true, 'Cannot open the profile page');
+        expect(profile.form.get(0).getText()).toBe(userProfileData.name);
+        expect(profile.form.get(1).getText()).toBe(userProfileData.email);
         expect(profile.form.get(2).isPresent()).toBeTruthy();
-        expect(profile.form.get(3).getText()).toBe(userProfileData.phone, 'Cannot compare');
-        expect(profile.form.get(4).getText()).toBe(userProfileData.address, 'Cannot compare');
-        expect(profile.form.get(5).getText()).toBe(userProfileData.pin, 'Cannot compare');
+        expect(profile.form.get(3).getText()).toBe(userProfileData.phone);
+        expect(profile.form.get(4).getText()).toBe(userProfileData.address);
+        expect(profile.form.get(5).getText()).toBe(userProfileData.pin);
         expect(profile.form.get(6).getAttribute('class')).toBe(userProfileData.news);
 
     });
