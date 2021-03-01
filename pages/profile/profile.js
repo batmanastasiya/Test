@@ -22,15 +22,6 @@ export class ProfilePage {
         });
 
     }
- /*   //is not empty ↓ переделать
-    async getVarPass() {
-        await this.form.get(2).getText().then((value) => {
-            userProfileData.pass = text;
-            return userProfileData.pass;
-        });
-
-    }
-    */
     async getVarPhone() {
         await this.form.get(3).getText().then((text) => {
             userProfileData.phone = text;
@@ -52,11 +43,15 @@ export class ProfilePage {
         });
 
     }
-  /*  setVarNewslatter() {
+    async setVarNewslatter() {
+        await this.form.get(6).getAttribute('class').then((value) => {
+            userProfileData.news = value;
+            return userProfileData.news;
+        });
 
     }
 
-   */
+
 
     async grabValuesFromTheTable() {
         await this.getVarName();
@@ -64,5 +59,6 @@ export class ProfilePage {
         await this.getVarPhone();
         await this.getVarAddress();
         await this.getVarSupPin();
+        await this.setVarNewslatter();
     }
 }
