@@ -7,7 +7,7 @@ export class LoginPage {
         this.emailInput = element(by.model('form.email'));
         this.passInput = element(by.model('form.password'));
         this.eyeBtn = $('.btn-input-block');
-        this.loginBtn = element(by.buttonText('Login')); //этот селектор может быть совсем не оч
+        this.loginBtn = element(by.buttonText('Login')); //этот селектор может быть не самый красивым, да
         this.errorMessage = $('.noty_text');
     }
     async enterEmail(email) {
