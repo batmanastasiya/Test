@@ -1,4 +1,4 @@
-import {by, element} from "protractor";
+import {$, by, element} from "protractor";
 import {userEmail, userPass} from "../../creds";
 
 export class LoginPage {
@@ -8,6 +8,8 @@ export class LoginPage {
         this.passInput = element(by.model('form.password'));
         this.eyeBtn = element(by.css('.btn-input-block'));
         this.loginBtn = element(by.buttonText('Login'));
+        this.errorMessage = $('.noty_text');
+        //element(by.id('#noty_547712987954176000')).
     }
     async enterEmail(email) {
         await this.emailInput.sendKeys(email);

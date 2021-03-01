@@ -1,12 +1,10 @@
 export let  userEmail = 'ssls.automation+666@gmail.com';
 export let userEmailBtn = userEmail.toUpperCase();
 export let userPass = '123456';
-export let anyEmail = 'ncqapybara@gmail.com';
+export let invalidEmail = 'ncqapybara@gmail.com';
+export let message = 'Uh oh! Email or password is incorrect'
 
 export let userProfileData = {};
-
-
-
 
 
 /*
