@@ -21,11 +21,11 @@ describe('My profile page. Client area', () => {
     });
 
     it('Verify login', async () => {
-        //await homepage.open();
         await header.clickLoginBtn();
         await loginPage.fullLogin();
         await header.clickProfileTabInDropdown();
 
+        expect(profile.profilePageContent.isDisplayed()).toBe(true);
         expect(profile.form.get(0).getText()).toBe(userProfileData.name, 'Cannot compare');
         expect(profile.form.get(1).getText()).toBe(userProfileData.email, 'Cannot compare');
         expect(profile.form.get(2).isPresent()).toBeTruthy();

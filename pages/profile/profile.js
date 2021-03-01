@@ -1,10 +1,9 @@
-import {by, element} from "protractor";
+import {$, by, element} from "protractor";
 import {userProfileData} from "../../creds";
 
 export class ProfilePage {
     constructor() {
-        this.profilePageUrl = 'https://www.sbzend.ssls.com/user/profile';
-        this.profilePageContent = '';
+        this.profilePageContent = $('.profile-content');
         this.form = element(by.name('form')).$$('.description').$$('.text');
 
     }
@@ -14,7 +13,6 @@ export class ProfilePage {
             return userProfileData.name;
         });
     }
-
     async getVarEmail() {
         await this.form.get(1).getText().then((text) => {
             userProfileData.email = text;
@@ -50,9 +48,6 @@ export class ProfilePage {
         });
 
     }
-
-
-
     async grabValuesFromTheTable() {
         await this.getVarName();
         await this.getVarEmail();
