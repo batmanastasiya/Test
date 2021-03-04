@@ -1,8 +1,7 @@
-import {userProfileData} from "../user/creds";
+import {userEmail, userPass, userProfileData} from "../user/creds";
 import {Header} from "../pages/home page/header";
 import {Homepage} from "../pages/home page/homepage";
 import {LoginPage} from "../pages/login page/login";
-import {describe} from "selenium-webdriver/testing";
 import {ProfilePage} from "../pages/profile/profile";
 
 const header = new Header();
@@ -14,7 +13,7 @@ describe('My profile page. Client area', () => {
     beforeAll(async () => {
         await homepage.open().catch((err) => fail(`Cannot open homepage. Error: ${err}`));
         await header.clickLoginBtn();
-        await loginPage.fullLogin();
+        await loginPage.fullLogin(userEmail, userPass);
         await header.clickProfileTabInDropdown();
         await profile.grabValuesFromTheTable();
         await header.clickLogOut();
@@ -22,7 +21,7 @@ describe('My profile page. Client area', () => {
 
     it('Verify user account data', async () => {
         await header.clickLoginBtn();
-        await loginPage.fullLogin();
+        await loginPage.fullLogin(userEmail, userPass);
         await header.clickProfileTabInDropdown();
 
         expect(profile.profilePageContent.isDisplayed()).toBe(true, 'Cannot open the profile page');

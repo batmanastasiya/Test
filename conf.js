@@ -8,8 +8,6 @@ exports.config = {
     framework: 'jasmine',
     seleniumAddress: 'http://localhost:4444/wd/hub',
     specs: [
-        './test/invalid-login.spec.js',
-        './test/login.spec.js',
         './test/profile.spec.js'
     ],
     capabilities: {

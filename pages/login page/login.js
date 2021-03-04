@@ -7,7 +7,7 @@ export class LoginPage {
         this.emailInput = element(by.model('form.email'));
         this.passInput = element(by.model('form.password'));
         this.eyeBtn = $('.btn-input-block');
-        this.loginBtn = element(by.buttonText('Login')); //этот селектор может быть не самый красивым, да
+        this.loginBtn = element(by.buttonText('Login'));
         this.errorMessage = $('.noty_text');
     }
     async enterEmail(email) {
@@ -22,9 +22,9 @@ export class LoginPage {
     async clickLogin() {
         await this.loginBtn.click();
     }
-    async fullLogin() {
-        await this.enterEmail(userEmail);
-        await this.enterPass(userPass);
+    async fullLogin(email, pass) {
+        await this.enterEmail(email);
+        await this.enterPass(pass);
         await this.clickLogin();
     }
 }
